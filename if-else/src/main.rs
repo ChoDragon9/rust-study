@@ -35,4 +35,19 @@ fn main() {
 
   index_vec[1] += 5;
   println!("Vector : {:?}", index_vec);
+
+  if 1 == 2 {
+    println!("True, the numbers are quals.")
+  } else {
+    println!("False")
+  }
+
+  // Rust의 if 블록은 식으로 작동할 수 있음
+  let formal = true;
+  let greeting = if formal {
+    "Good day to you."
+  } else {
+    "Hey!"
+  };
+  println!("{}", greeting);
 }
