@@ -1,22 +1,44 @@
+use std::collections::HashMap;
+
 fn main() {
-  let colors = ["Blue", "Green", "Red", "Silver"];
+  let mut orders: HashMap<i32, Car> = HashMap::new();
+
+  let mut order = 1;
   let mut car: Car;
-  let mut engine: Transmission = Transmission::Manual;
 
-  car = car_factory(String::from(colors[0]), engine, true, 0);
-  println!("Car order 1: {:?}, Hard top = {}, {:?}, {}, {} miles", car.age.0, car.roof, car.motor, car.color, car.age.1);
+  car = car_factory(order, 1000);
+  orders.insert(order, car);
+  println!("{}: {:?}", order, orders.get(&order));
 
-  engine = Transmission::SemiAuto;
-  car = car_factory(String::from(colors[1]), engine, false, 100);
-  println!("Car order 2: {:?}, Hard top = {}, {:?}, {}, {} miles", car.age.0, car.roof, car.motor, car.color, car.age.1);
+  order += 1;
+  car = car_factory(order, 2000);
+  
+  orders.insert(order, car);
+  println!("{}: {:?}", order, orders.get(&order));
 
-  engine = Transmission::Automatic;
-  car = car_factory(String::from(colors[2]), engine, true, 200);
-  println!("Car order 3: {:?}, Hard top = {}, {:?}, {}, {} miles", car.age.0, car.roof, car.motor, car.color, car.age.1);
+  order += 1;
+  car = car_factory(order, 0);
+  
+  orders.insert(order, car);
+  println!("{}: {:?}", order, orders.get(&order));
 
-  car_factory(String::from("Orange"), Transmission::Manual, true, 0);
-  car_factory(String::from("Red"), Transmission::SemiAuto, false, 565);
-  car_factory(String::from("White"), Transmission::Automatic, true, 3000);
+  order += 1;
+  car = car_factory(order, 0);
+  
+  orders.insert(order, car);
+  println!("{}: {:?}", order, orders.get(&order));
+
+  order += 1;
+  car = car_factory(order, 3000);
+  
+  orders.insert(order, car);
+  println!("{}: {:?}", order, orders.get(&order));
+
+  order += 1;
+  car = car_factory(order, 4000);
+  
+  orders.insert(order, car);
+  println!("{}: {:?}", order, orders.get(&order));
 }
 
 #[derive(PartialEq, Debug)]
@@ -42,21 +64,30 @@ fn car_quality (miles: u32) -> (Age, u32) {
 }
 
 fn car_factory (
-  color: String,
-  motor: Transmission,
-  roof: bool,
+  order: i32,
   miles: u32
 ) -> Car {
-  let age = car_quality(miles);
+  let colors = ["Blue", "Green", "Red", "Silver"];
 
-  if age.0 == Age::Used {
-    if roof == true {
-      println!("Prepare a used car: {:?}, {}, Hard top, {} miles\n", motor, color, miles);
-    }
+  let mut color = order as usize;
+  if color > 4 {
+    color = color - 4;
   }
 
+  let mut motor = Transmission::Manual;
+  let mut roof = true;
+
+  if order % 3 == 0 {
+    motor = Transmission::Automatic;
+  } else if order % 2 == 0 {
+    motor = Transmission::SemiAuto;
+    roof = false;
+  }
+
+  let age = car_quality(miles);
+
   Car {
-    color: color,
+    color: String::from(colors[(color - 1) as usize]),
     motor: motor,
     roof: roof,
     age: age
