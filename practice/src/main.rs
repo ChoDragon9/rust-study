@@ -5,40 +5,21 @@ fn main() {
 
   let mut order = 1;
   let mut car: Car;
+  let mut miles = 0;
 
-  car = car_factory(order, 1000);
-  orders.insert(order, car);
-  println!("{}: {:?}", order, orders.get(&order));
+  while order <= 11 {
+    car = car_factory(order, miles);
+    orders.insert(order, car);
+    println!("{}: {:?}", order, orders.get(&order));
 
-  order += 1;
-  car = car_factory(order, 2000);
-  
-  orders.insert(order, car);
-  println!("{}: {:?}", order, orders.get(&order));
+    miles = if miles == 2100 { 
+      0
+    } else {
+      miles + 700
+    };
 
-  order += 1;
-  car = car_factory(order, 0);
-  
-  orders.insert(order, car);
-  println!("{}: {:?}", order, orders.get(&order));
-
-  order += 1;
-  car = car_factory(order, 0);
-  
-  orders.insert(order, car);
-  println!("{}: {:?}", order, orders.get(&order));
-
-  order += 1;
-  car = car_factory(order, 3000);
-  
-  orders.insert(order, car);
-  println!("{}: {:?}", order, orders.get(&order));
-
-  order += 1;
-  car = car_factory(order, 4000);
-  
-  orders.insert(order, car);
-  println!("{}: {:?}", order, orders.get(&order));
+    order += 1;
+  }
 }
 
 #[derive(PartialEq, Debug)]
@@ -70,7 +51,7 @@ fn car_factory (
   let colors = ["Blue", "Green", "Red", "Silver"];
 
   let mut color = order as usize;
-  if color > 4 {
+  while color > 4 {
     color = color - 4;
   }
 
