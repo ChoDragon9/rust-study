@@ -38,7 +38,7 @@ fn car_quality (miles: u32) -> (Age, u32) {
     return (Age::Used, miles);
   }
   
-  (Age::New, miles);
+  (Age::New, miles)
 }
 
 fn car_factory (
