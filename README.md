@@ -5,7 +5,7 @@
 
 [1] [rspack](https://www.rspack.dev/), [swc](https://swc.rs/)가 있음. <br />
 [2] JavaScript Runtime은 [Node.js](https://nodejs.org/en)와 [Bun](https://bun.sh/)이 있으므로 Node.js라고 이제 안써야 할 듯.<br />
-[3] DX: Developer eXperience - 관련 아티클: https://toss.tech/article/tech-writer-2
+[3] DX: Developer eXperience - [관련 포스트](https://toss.tech/article/tech-writer-2)
 
 ## 학습 자료
 - [ ] Rust 학습 | MS : https://learn.microsoft.com/ko-kr/training/paths/rust-first-steps/
