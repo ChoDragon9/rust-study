@@ -51,8 +51,8 @@ fn main() {
   }
 
   // 위 코드를 if let을 활용해서 간결하게 만들 수 있음
-  if let Some(7) = a_number {
-    println!("That's my lucky number!")
+  if let Some(number) = a_number {
+    println!("{} is my lucky number!", number);
   }
 
   // unwrap 메서드를 사용해서 Option 타입의 내부 값에 직접 엑세스 가능
