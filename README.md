@@ -8,6 +8,6 @@
 [3] DX: Developer eXperience - [관련 포스트](https://toss.tech/article/tech-writer-2)
 
 ## 학습 자료
-- [ ] Rust 학습 | MS : https://learn.microsoft.com/ko-kr/training/paths/rust-first-steps/
+- [x] Rust 학습 | MS : https://learn.microsoft.com/ko-kr/training/paths/rust-first-steps/
 - [ ] Rust 문법 : https://rinthel.github.io/rust-lang-book-ko/foreword.html
 - [ ] CookBook : https://rust-lang-nursery.github.io/rust-cookbook/
