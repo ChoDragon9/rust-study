@@ -1,1 +1,2 @@
-https://learn.microsoft.com/ko-kr/training/paths/rust-first-steps/ 학습 내용 정리
+- https://learn.microsoft.com/ko-kr/training/paths/rust-first-steps/ 학습 내용 정리
+- 학습 완료: https://learn.microsoft.com/api/achievements/share/ko-kr/19345786/HRPNGAB8?sharingId=4F4F7284BA419B16
