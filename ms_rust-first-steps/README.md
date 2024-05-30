@@ -1,0 +1,1 @@
+https://learn.microsoft.com/ko-kr/training/paths/rust-first-steps/ 학습 내용 정리
