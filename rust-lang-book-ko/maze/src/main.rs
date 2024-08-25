@@ -1,9 +1,11 @@
 use rand::Rng;
 
+// const 상수명: 타입 = 값
 const MAP_N: usize = 25;
 
 fn main() {
     let mut rng = rand::thread_rng();
+    // let mut 변수명 = [[초깃값; 배열 길이]; 배열 길이];
     let mut maze = [[0; MAP_N]; MAP_N];
 
     for n in 0..MAP_N {
