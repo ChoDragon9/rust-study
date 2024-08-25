@@ -15,6 +15,18 @@ fn main() {
 
     let standard_weight = 22.0 * (height / 100.0).powf(2.0);
     println!("표준 체중은 {:.1}kg입니다.", standard_weight);
+
+    let s = "365";
+    let i: i32 = match s.parse() {
+        Ok(v) => v,
+        Err(_) => 0,
+    };
+
+    println!("{}", i);
+
+    let s2 = "365";
+    let i2: i32 = s.parse().unwrap();
+    println!("{}", i2);
 }
 
 fn input_f(def: f64) -> f64 {
