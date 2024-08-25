@@ -24,4 +24,14 @@ fn main() {
     }
 
     println!("{:?}", bingocard);
+
+    let mut nums = vec![1, 2, 3];
+    nums.push(4);
+    nums.push(5);
+    println!("{:?}", nums);
+
+    let s_vec: Vec<&str> = vec!["개", "고양이", "닭"];
+    for i in s_vec {
+        println!("{}", i);
+    }
 }
